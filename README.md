@@ -53,7 +53,7 @@ The primary source is the official RBI publications portal:
 | RBI Financial Stability Reports | Half-yearly reports covering approximately 10 years |
 | Minimum corpus target | 30 reports and 6,000+ pages |
 | Week 1 collection milestone | 50+ pages |
-| Week 3 processing milestone | 500+ pages |
+| Week 2 processing milestone | 500+ pages |
 
 The 6,000+ page figure is the **target corpus**, not a claim that the full dataset has already been collected. Actual downloaded reports and page counts should be recorded in `DATASET.md` and `data/manifest.csv`.
 
