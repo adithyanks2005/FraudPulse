@@ -1,61 +1,296 @@
-# FraudPulse
+# 🛡️ FraudPulse
 
-> Track RBI-reported bank frauds, cyber incidents, and digital-payment risks with current, cited evidence.
+> **AI-powered RBI financial fraud and cyber-risk intelligence.**  
+> Find, compare, and verify what the Reserve Bank of India (RBI) reports about banking fraud, cyber incidents, and digital-payment risks.
 
-## Problem
+**Project status:** In development  
+**Primary user:** IT-risk officer at an urban co-operative bank preparing quarterly cyber-risk notes for the board.
 
-Fraud and cyber-risk trends are scattered across RBI Annual Reports, half-yearly Financial Stability Reports (FSRs), and payment-system chapters. Each report is published on a different schedule, so quarterly board notes can easily quote outdated figures. FraudPulse keeps the relevant RBI evidence searchable and current, including passages added in newly published reports.
+---
 
-## Who it is for
+## 1. The problem
 
-IT-risk officers at urban co-operative banks, such as an officer in Tiruchirappalli preparing a quarterly cyber-risk note for the board.
+RBI fraud and cyber-risk information is spread across Annual Reports, half-yearly Financial Stability Reports (FSRs), and payment-system publications. These documents arrive on different dates and contain hundreds of pages, making it difficult for an IT-risk officer to find the latest figures and avoid repeating outdated information in board notes.
 
-## Signature feature
+FraudPulse is being built to collect these publications, make their contents searchable, and return evidence-backed answers with references to the source document and page.
 
-A "What's new since your last note?" view lists RBI fraud and cyber-risk passages added since a selected date.
+## 2. What FraudPulse will do
 
-## Hardest problem (my interview story)
+- Collect RBI Annual Reports and Financial Stability Reports covering approximately ten years.
+- Extract relevant passages about bank fraud, cyber incidents, and digital-payment risks.
+- Let users ask questions in natural language.
+- Retrieve supporting passages using Retrieval-Augmented Generation (RAG).
+- Return answers with document and page citations.
+- Detect new or changed RBI publications and re-index only the affected content.
+- Show a **“What’s new since your last note?”** view for passages added after a selected date.
+- Help users research and prepare quarterly board-risk notes.
 
-Freshness without reprocessing the full corpus: a daily job checks RBI publication pages, hashes each PDF, and re-indexes only new or changed chapters. This makes a newly issued FSR searchable within an hour without re-embedding more than 6,000 pages. The project measures the re-indexing time and cost for one newly published report.
+> These are project goals. Features are marked as implemented only after they have been built and tested.
 
-## Dataset
+## 3. Intended user and example questions
 
-| Source | Link | Documents | Pages | Licence / terms |
-|---|---|---:|---:|---|
-| RBI Annual Reports | [RBI publications](https://rbi.org.in/Scripts/FsReports.aspx) | 10 years, chapter-wise PDFs | Included in 6,000+ page corpus | RBI public publications; verify reuse terms before redistribution |
-| RBI Financial Stability Reports | [RBI Financial Stability Reports](https://rbi.org.in/Scripts/FsReports.aspx) | Half-yearly, 10 years | Included in 6,000+ page corpus | RBI public publications; verify reuse terms before redistribution |
+The primary user is an IT-risk officer at an urban co-operative bank in Tiruchirappalli.
 
-Minimum corpus: 30 reports and 6,000+ pages from RBI publications.
+Example questions the finished system should help answer:
 
-## Research agent
+1. How many digital-payment frauds did banks report in the latest RBI Annual Report?
+2. What cyber-risk observations did RBI highlight in its latest Financial Stability Report?
+3. How have card and internet-related fraud trends changed over the last five years?
+4. Which new RBI fraud or cyber-risk passages have appeared since the date of my previous board note?
+5. Which RBI document and page support a particular statistic?
 
-The research agent drafts the quarterly board note by querying FraudPulse for card fraud, digital-payment fraud, and cyber incidents, then uses a calculator for year-on-year changes. A fact-checking step confirms that each reported figure comes from the latest available RBI publication before the officer signs the note.
+The system must cite its evidence. It should not invent figures when the retrieved documents do not contain an answer.
 
-## 10 real questions
+## 4. Dataset and source
 
-1. How many digital payment frauds did banks report last year according to the RBI Annual Report?
-2. What did the December 2025 Financial Stability Report say about a financial sector cybersecurity strategy?
-3. How has the share of card and internet frauds in total fraud cases changed over five years?
+The primary source is the official RBI publications portal:
 
-## Success criteria
+- [RBI reports and publications](https://rbi.org.in/Scripts/FsReports.aspx)
 
-- A new RBI report is searchable within 60 minutes of publication.
-- Each update re-indexes under 5% of total chunks.
-- Re-indexing time and cost are measured for one new report.
+| Collection | Planned coverage |
+|---|---|
+| RBI Annual Reports | Approximately 10 years; chapter-wise PDFs where available |
+| RBI Financial Stability Reports | Half-yearly reports covering approximately 10 years |
+| Minimum corpus target | 30 reports and 6,000+ pages |
+| Week 1 collection milestone | 50+ pages |
+| Week 3 processing milestone | 500+ pages |
 
-## Run it
+The 6,000+ page figure is the **target corpus**, not a claim that the full dataset has already been collected. Actual downloaded reports and page counts should be recorded in `DATASET.md` and `data/manifest.csv`.
+
+### Dataset handling
+
+- Keep original downloaded PDFs in `data/raw/`; this directory is excluded from Git.
+- Keep only small, permitted examples in `data/sample/`.
+- Record each download's source URL, download date, byte size, and full SHA-256 hash in `data/manifest.csv`.
+- Check the applicable website access rules and reuse terms before collecting or redistributing documents.
+
+## 5. How the system is designed
+
+### RAG question-answering flow
+
+```text
+RBI PDFs
+   |
+   v
+PDF text extraction (retain page numbers and headings)
+   |
+   v
+Text cleaning and chunking
+   |
+   v
+Embedding generation
+   |
+   v
+PostgreSQL + pgvector
+   |
+   |                         User question
+   |                               |
+   |                               v
+   |                        Query embedding
+   |                               |
+   +----------------------> Similarity search
+                                   |
+                                   v
+                         Relevant source passages
+                                   |
+                                   v
+                              LLM answer
+                                   |
+                                   v
+                     Answer + document/page citations
+```
+
+### Incremental indexing flow
+
+```text
+Scheduled check of RBI publication pages
+                  |
+                  v
+       Discover PDF links and metadata
+                  |
+                  v
+          Download / hash document
+                  |
+                  v
+       Compare with stored document hash
+             /             \
+        Unchanged          New/changed
+            |                  |
+           Skip          Extract affected content
+                               |
+                         Chunk and embed
+                               |
+                         Update pgvector
+                               |
+                         Record update
+```
+
+The freshness objective is to make a newly published report searchable within 60 minutes and re-index less than 5% of the existing chunks for a typical single-report update. These are targets to measure, not verified performance claims.
+
+## 6. Technology stack
+
+| Component | Planned technology | Responsibility |
+|---|---|---|
+| Language | Python 3.12 | Application and data-processing code |
+| API | FastAPI | HTTP endpoints |
+| LLM | Configured LLM API with fallback model | Answer generation |
+| PDF processing | PyMuPDF (planned) | Text extraction with page references |
+| Embeddings | Embedding model | Convert chunks and questions to vectors |
+| Database | PostgreSQL | Document metadata and application data |
+| Vector search | pgvector | Similarity search over embeddings |
+| Containers | Docker / Docker Compose | Reproducible local services |
+| Tests and CI | pytest, Ruff, GitHub Actions | Quality checks |
+| UI | To be selected after backend milestones | User-facing search and updates |
+
+The implementation may be refined as the weekly milestones progress.
+
+## 7. Development schedule and deliverables
+
+The project follows the assigned three-week milestone plan. Each week should end with a working, demonstrable increment and a Git tag.
+
+| Week | Schedule | Work planned | Definition of done |
+|---|---|---|---|
+| **Week 1 – Foundation and dataset** | Wed 21 – Sat 24 Oct | Create the repository from the Examate template; complete the project README; get FastAPI `/health` running; prepare 10 real research questions; collect the first 50+ RBI PDF pages; document the dataset and add a small sample. | Local health check works; questions and dataset metadata are committed; sample data is present; `week-1` tag is pushed. |
+| **Week 2 – LLM and service infrastructure** | Mon 26 – Sat 31 Oct | Implement `POST /chat` with structured JSON; add streaming, timeouts, retries, and a fallback model; log usage and expose `GET /usage`; run API and PostgreSQL/pgvector with Docker Compose; get CI passing and publish a live link. | Chat endpoint and usage endpoint work; Docker Compose starts the services; CI is green; live link is documented; `week-2` tag is pushed. |
+| **Week 3 – RAG and evaluation** | Through Fri 6 Nov | Build a parser that retains page numbers and headings; chunk, embed, and store 500+ pages in pgvector; implement `POST /ask` with document/page citations; evaluate the 10 research questions and record scores in `docs/EVAL_v0.md`. | A question can retrieve RBI evidence and return citations; the evaluation is documented; `week-3` tag is pushed. |
+
+### Work after the three-week milestones
+
+The following capabilities complete the wider project objective and should be scheduled after the core RAG milestone:
+
+1. Expand the corpus toward 30+ reports and 6,000+ pages.
+2. Build the daily RBI publication discovery and change-detection job.
+3. Implement the “What’s new since your last note?” view.
+4. Measure single-report re-indexing time, affected chunk count, and embedding/API cost.
+5. Add historical comparisons and support for quarterly board-note research.
+6. Improve the user interface, deployment, monitoring, and documentation.
+
+### Progress tracking
+
+The task checklist and daily activity log are maintained in [`PROGRESS.md`](PROGRESS.md). Dataset inventory is maintained in [`DATASET.md`](DATASET.md).
+
+## 8. Repository structure
+
+```text
+FraudPulse/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── app/
+│   ├── Tools/
+│   │   ├── downloads.py
+│   │   └── url.txt
+│   ├── __init__.py
+│   ├── config.py
+│   ├── main.py
+│   └── schemas.py
+├── data/
+│   ├── raw/              # Downloaded PDFs; not committed
+│   ├── sample/           # Small sample files
+│   └── manifest.csv      # Download inventory and hashes
+├── docs/
+│   └── QUESTIONS.md
+├── tests/
+│   ├── conftest.py
+│   └── test_health.py
+├── .env.example
+├── .gitignore
+├── DATASET.md
+├── Dockerfile
+├── PROGRESS.md
+├── README.md
+├── pyproject.toml
+├── requirements.txt
+└── uv.lock
+```
+
+Additional modules will be added as the LLM, RAG, database, evaluation, and publication-monitoring milestones are implemented.
+
+## 9. Setup and run locally
+
+### Prerequisites
+
+- Python 3.12
+- Git
+- [uv](https://docs.astral.sh/uv/)
+- Docker Desktop (for the database milestone)
+
+### Clone and install
 
 ```bash
+git clone https://github.com/adithyanks2005/FraudPulse.git
+cd FraudPulse
+
 uv python install 3.12
 uv venv --python 3.12
 uv sync --group dev
-cp .env.example .env                                 # Windows: copy .env.example .env
-uv run uvicorn app.main:app --reload
-curl localhost:8000/health
 ```
 
-This project intentionally supports Python 3.12 through 3.14. Python 3.15 can force a source build of PyYAML through `uvicorn[standard]`; use the 3.12 environment above rather than `--frozen`, which would retain an unusable environment.
+### Configure environment
 
-## Live link
+Windows:
 
-<Added in Week 2>
+```powershell
+copy .env.example .env
+```
+
+Add credentials only when the relevant LLM integration is implemented. Never commit the real `.env` file or API keys.
+
+### Start the API
+
+```bash
+uv run uvicorn app.main:app --reload
+```
+
+- Health check: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+- Interactive API documentation: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+### Run the RBI PDF downloader
+
+From the repository root, provide a text file containing **direct PDF URLs**, one per line:
+
+```text
+# One direct RBI PDF URL per line
+https://www.rbi.org.in/example-report.pdf
+```
+
+Run:
+
+```bash
+python app/Tools/downloads.py path/to/urls.txt
+```
+
+The downloader checks `robots.txt`, uses a delay between requests, retries transient failures, validates PDF responses, saves files under `data/raw/`, and records successful downloads in `data/manifest.csv`. The RBI publications landing page is not itself a PDF URL; use the direct PDF link for each report.
+
+## 10. Evaluation and success metrics
+
+| Metric | Project target |
+|---|---:|
+| RBI reports in the full corpus | 30+ |
+| Pages in the full corpus | 6,000+ |
+| Week 1 collected pages | 50+ |
+| Week 3 processed pages | 500+ |
+| Time for a new report to become searchable | Within 60 minutes |
+| Existing chunks re-indexed for a typical single-report update | Less than 5% |
+| Answer evidence | Document and page citations |
+| Incremental indexing benchmark | Time and estimated cost recorded for one new report |
+
+The RAG evaluation will use the 10 questions in `docs/QUESTIONS.md`. Results, including incorrect or unsupported answers, should be recorded rather than hidden.
+
+## 11. Current implementation status
+
+This repository is under active development. The README, FastAPI project scaffold, configuration, initial health-test files, CI workflow, Dockerfile, dataset documentation, and RBI downloader are present in the repository. The LLM workflow, pgvector-backed RAG pipeline, citation-based `/ask` endpoint, and incremental publication indexing remain milestone work until implemented and tested.
+
+## 12. Security, accuracy, and disclaimer
+
+- Treat RBI publications as the primary evidence source and retain original URLs and page references.
+- Do not present an LLM-generated figure as verified unless it is supported by a retrieved source passage.
+- Keep API keys and local environment files out of version control.
+- Preserve document hashes so downloaded versions can be identified and compared.
+- Verify generated board-note content against the original RBI publication before institutional use.
+
+FraudPulse is an independent academic/technical project. It is not an official RBI product and is not affiliated with or endorsed by the Reserve Bank of India. Outputs are for research support and must be checked against original publications before financial, regulatory, or institutional decisions.
+
+---
+
+**FraudPulse — Turning RBI publications into actionable financial-risk intelligence.**
