@@ -152,7 +152,7 @@ The project follows the assigned three-week milestone plan. Each week should end
 |---|---|---|---|
 | **Week 1 – Foundation and dataset** | Wed 21 – Sat 24 Oct | Create the repository from the Examate template; complete the project README; get FastAPI `/health` running; prepare 10 real research questions; collect the first 50+ RBI PDF pages; document the dataset and add a small sample. | Local health check works; questions and dataset metadata are committed; sample data is present; `week-1` tag is pushed. |
 | **Week 2 – LLM and service infrastructure** | Mon 26 – Sat 31 Oct | Implement `POST /chat` with structured JSON; add streaming, timeouts, retries, and a fallback model; log usage and expose `GET /usage`; run API and PostgreSQL/pgvector with Docker Compose; get CI passing and publish a live link. | Chat endpoint and usage endpoint work; Docker Compose starts the services; CI is green; live link is documented; `week-2` tag is pushed. |
-| **Week 3 – RAG and evaluation** | Through Fri 6 Nov | Build a parser that retains page numbers and headings; chunk, embed, and store 500+ pages in pgvector; implement `POST /ask` with document/page citations; evaluate the 10 research questions and record scores in `docs/EVAL_v0.md`. | A question can retrieve RBI evidence and return citations; the evaluation is documented; `week-3` tag is pushed. |
+
 
 ### Work after the three-week milestones
 
