@@ -151,7 +151,7 @@ The project follows the assigned three-week milestone plan. Each week should end
 | Week | Schedule | Work planned | Definition of done |
 |---|---|---|---|
 | **Week 1 – Foundation and dataset** | Wed 21 – Sat 24 Oct | Create the repository from the Examate template; complete the project README; get FastAPI `/health` running; prepare 10 real research questions; collect the first 50+ RBI PDF pages; document the dataset and add a small sample. | Local health check works; questions and dataset metadata are committed; sample data is present; `week-1` tag is pushed. |
-| **Week 2 – LLM and service infrastructure** | Mon 26 – Sat 31 Oct | Implement `POST /chat` with structured JSON; add streaming, timeouts, retries, and a fallback model; log usage and expose `GET /usage`; run API and PostgreSQL/pgvector with Docker Compose; get CI passing and publish a live link. | Chat endpoint and usage endpoint work; Docker Compose starts the services; CI is green; live link is documented; `week-2` tag is pushed. |
+| **Week 2 – LLM and service infrastructure** | Mon 26 – Sat 31 Oct | Integrate LLM calls with a fallback model; expose token and cost usage; run `/health` in Docker and deploy it to a free host; maintain CI checks; document API endpoints and database tables in `DESIGN.md`. | **Completed:** LLM fallback, `/usage` token/cost reporting, Docker health check, live deployment, CI passing on every push, `DESIGN.md`, and `week-2` tag. |
 
 
 ### Work after the three-week milestones
@@ -196,6 +196,7 @@ FraudPulse/
 ├── .env.example
 ├── .gitignore
 ├── DATASET.md
+├── DESIGN.md
 ├── Dockerfile
 ├── PROGRESS.md
 ├── README.md
@@ -279,7 +280,7 @@ The RAG evaluation will use the 10 questions in `docs/QUESTIONS.md`. Results, in
 
 ## 11. Current implementation status
 
-This repository is under active development. The README, FastAPI project scaffold, configuration, initial health-test files, CI workflow, Dockerfile, dataset documentation, and RBI downloader are present in the repository. The LLM workflow, pgvector-backed RAG pipeline, citation-based `/ask` endpoint, and incremental publication indexing remain milestone work until implemented and tested.
+This repository is under active development. **Week 2 is complete:** LLM calls use a fallback model, `/usage` reports token usage and cost, `/health` runs in Docker and is deployed on a free host, CI passes on every push, and `DESIGN.md` documents the API endpoints and database tables. The parser, pgvector-backed RAG pipeline, citation-based `/ask` endpoint, evaluation, and incremental publication indexing remain Week 3 or later work until implemented and tested.
 
 ## 12. Security, accuracy, and disclaimer
 
