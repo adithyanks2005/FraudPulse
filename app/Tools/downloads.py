@@ -1,11 +1,11 @@
-"""Polite downloader: python tools/download.py urls.txt.
+"""Polite downloader: python app/Tools/downloads.py urls.txt.
 
 urls.txt: one URL per line (lines starting with # are skipped).
 Saves files to data/raw/ and logs every file to data/manifest.csv.
 """
+
 import csv
 import hashlib
-import requests
 import os
 import sys
 import time
@@ -13,14 +13,11 @@ from datetime import date
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
+import requests
+
 RAW = "data/raw"
 MANIFEST = "data/manifest.csv"
-HEADERS = {
-    "User-Agent": (
-        "ADITHYANKS/1.0 (Bastion Brief; contact:"
-        "ksadithyan2021@gmail.com)"
-    )
-}
+HEADERS = {"User-Agent": ("ADITHYANKS/1.0 (Bastion Brief; contact:ksadithyan2021@gmail.com)")}
 DELAY = 2  # seconds between requests: be polite to government servers
 
 robots = {}
@@ -45,8 +42,6 @@ def name_for(url):
     return name.replace(" ", "_")
 
 
-
-
 def main(list_file):
     os.makedirs(RAW, exist_ok=True)
     new_manifest = not os.path.exists(MANIFEST)
@@ -54,9 +49,7 @@ def main(list_file):
     with open(MANIFEST, "a", newline="") as mf:
         log = csv.writer(mf)
         if new_manifest:
-            log.writerow(
-                ["file", "source_url", "downloaded_on", "bytes", "sha256"]
-            )
+            log.writerow(["file", "source_url", "downloaded_on", "bytes", "sha256"])
 
         with open(list_file) as fh:
             urls = [u.strip() for u in fh]
@@ -83,13 +76,18 @@ def main(list_file):
                 f.write(r.content)
 
             digest = hashlib.sha256(r.content).hexdigest()[:16]
-            log.writerow(
-                [path, url, date.today().isoformat(), len(r.content), digest]
-            )
+            log.writerow([path, url, date.today().isoformat(), len(r.content), digest])
             print("saved", path, len(r.content), "bytes")
 
             time.sleep(DELAY)
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print(
+            "Usage: python app/Tools/downloads.py <url-list-file>",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+
     main(sys.argv[1])

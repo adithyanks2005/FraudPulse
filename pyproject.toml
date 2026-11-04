@@ -17,6 +17,7 @@ requires-python = ">=3.12,<3.15"
 dependencies = [
     "fastapi[standard]>=0.115",
     "pydantic-settings>=2.4",
+    "pymupdf>=2.1",
 ]
 
 [dependency-groups]

@@ -22,10 +22,10 @@ Freshness without reprocessing the full corpus: a daily job checks RBI publicati
 
 | Source | Link | Documents | Pages | Licence / terms |
 |---|---|---:|---:|---|
-| RBI Annual Reports | [RBI publications](https://rbi.org.in/Scripts/FsReports.aspx) | 10 years, chapter-wise PDFs | Included in 6,000+ page corpus | RBI public publications; verify reuse terms before redistribution |
-| RBI Financial Stability Reports | [RBI Financial Stability Reports](https://rbi.org.in/Scripts/FsReports.aspx) | Half-yearly, 10 years | Included in 6,000+ page corpus | RBI public publications; verify reuse terms before redistribution |
+| RBI Annual Reports | [RBI publications](https://rbi.org.in/Scripts/AnnualReportPublications.aspx) | Planned: 10 years, chapter-wise PDFs | Target: 6,000+ pages | RBI public publications; verify reuse terms before redistribution |
+| RBI Financial Stability Reports | [RBI Financial Stability Reports](https://rbi.org.in/Scripts/FsReports.aspx) | Planned: half-yearly, 10 years | Target: 6,000+ pages | RBI public publications; verify reuse terms before redistribution |
 
-Minimum corpus: 30 reports and 6,000+ pages from RBI publications.
+Collection status: the RBI Financial Stability Report catalogue and one one-page June 2026 press release are present locally. The press release is not the full report and does not count toward the 50-page Week 1 minimum. The longer-term corpus target is 30 reports and 6,000+ pages.
 
 ## Research agent
 
