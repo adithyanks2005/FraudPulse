@@ -29,18 +29,9 @@ FraudPulse is being built to collect these publications, make their contents sea
 
 ## 3. Intended user and example questions
 
-<<<<<<< HEAD
-| Source | Link | Documents | Pages | Licence / terms |
-|---|---|---:|---:|---|
-| RBI Annual Reports | [RBI publications](https://rbi.org.in/Scripts/AnnualReportPublications.aspx) | Planned: 10 years, chapter-wise PDFs | Target: 6,000+ pages | RBI public publications; verify reuse terms before redistribution |
-| RBI Financial Stability Reports | [RBI Financial Stability Reports](https://rbi.org.in/Scripts/FsReports.aspx) | Planned: half-yearly, 10 years | Target: 6,000+ pages | RBI public publications; verify reuse terms before redistribution |
-
-Collection status: the RBI Financial Stability Report catalogue and one one-page June 2026 press release are present locally. The press release is not the full report and does not count toward the 50-page Week 1 minimum. The longer-term corpus target is 30 reports and 6,000+ pages.
-=======
 The primary user is an IT-risk officer at an urban co-operative bank in Tiruchirappalli.
 
 Example questions the finished system should help answer:
->>>>>>> 488660756508d7f9902c9e0de12973761914121a
 
 1. How many digital-payment frauds did banks report in the latest RBI Annual Report?
 2. What cyber-risk observations did RBI highlight in its latest Financial Stability Report?

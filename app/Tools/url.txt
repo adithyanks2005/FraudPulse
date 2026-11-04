@@ -1,1 +1,2 @@
-https://rbi.org.in/Scripts/FsReports.aspx
+# Direct RBI PDF URLs
+https://rbidocs.rbi.org.in/rdocs/PublicationReport/Pdfs/0FSRJUNE20253006258AE798B4484642AD861CC35BC2CB3D8E.PDF

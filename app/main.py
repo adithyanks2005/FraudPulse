@@ -39,6 +39,12 @@ def health(settings: SettingsDep) -> dict:
     return {"status": "ok", "app": settings.app_name, "environment": settings.environment}
 
 
+@app.get("/ready")
+def ready(settings: SettingsDep) -> dict:
+    """Readiness: application dependencies and configurations are initialized."""
+    return {"status": "ready", "app": settings.app_name, "environment": settings.environment}
+
+
 def sse(data: dict, event: str | None = None) -> str:
     prefix = f"event: {event}\n" if event else ""
     return f"{prefix}data: {json.dumps(data)}\n\n"
@@ -82,7 +88,7 @@ async def chat(request: ChatRequest, settings: SettingsDep, provider: LLMDep) ->
             price_in_per_m=settings.price_input_per_million,
             price_out_per_m=settings.price_output_per_million,
             ok=ok,
-            fallback_used=False,
+            fallback_used=getattr(provider, "last_fallback_used", False),
         )
 
         if hasattr(usage_data, "__dict__"):
