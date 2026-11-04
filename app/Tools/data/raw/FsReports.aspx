@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    
-    
+
+
      <title>Financial Stability Report| Official Website of Reserve Bank of India </title>
     <meta name="description" content="Financial Stability Report- Reserve Bank of India" />
     <meta name="keyword" content="RBI Financial Stability Report" />
@@ -23,7 +23,7 @@
 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="13787114" />
 <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAtX2ljrmkCB1F6tgdd1l9AclK+XrsQEVyjeDxQ0A4GYXM3IfYFEMdbtkmb6zzJSc2CLrBfuDtX7nV3nL+5njT0xpTvjNMInTm7jDqH04NfPDGQ6cu1iZ73N7YF2NPAmCyQ/q33cCQLgaFQSElESF1pcG6ARGh77hh0/r4ObuL1TAsg3NivnNEt6QsKSovCCK9t9xf1loRXvygROM/A1O+NHJounKCGGAHd04zzVhBPZzzn3CaFHLT412ctQ/x+SWngVJzlFQqP7xj4CYUWKXVqc" />
         <input type="hidden" name="hdnYear" id="hdnYear" />
-        
+
 <link href="/JQuery/css/jquery-ui-1.8.18.custom2.css" rel="stylesheet" type="text/css" />
 <link href="/includes/print.css" rel="stylesheet" media="print" type="text/css" />
 
@@ -34,7 +34,7 @@
 <script type="text/javascript" src="/js/ImgSaveDisable.js"></script>
 
 <script type="text/javascript">
-  
+
 //Redirect to mobile site start
     function detectmob() {
         if (screen.width <= 599 || screen.Height <= 975) {
@@ -46,8 +46,8 @@
 
     if (detectmob()) {
        window.location.href = "https://m.rbi.org.in" + window.location.pathname;
-		
-       
+
+
     }
 
 	//Redirect to mobile site End
@@ -73,7 +73,7 @@
 	{
 		param.keyWord1=param.keyWord1.substring(param.keyWord1,param.keyWord1.indexOf("#"));
 	}
-        if (!strFilterComments.test(param.keyWord1)) {            
+        if (!strFilterComments.test(param.keyWord1)) {
             return false;
         }
         else {
@@ -137,7 +137,7 @@
                 });
             },
 
-            
+
             minLength: 3
 
         });
@@ -171,10 +171,10 @@
 
     function RemoveSpecialChars(inputText) {
         var filteredString = inputText.replace(/[\*\^\'\!\@\$\.\#\(\)\-\?\<\>\;\"\&\+\{\}\:]/g, '');
-        
+
         return filteredString;
     }
-    
+
 
     function LoadSearchData(id, key) {
         if (id == "txtSearch") {
@@ -189,7 +189,7 @@
     function validateSearchText() {
         if (validation()) {
             var strloc = new String(document.location.href.toString());
-            if (strloc.indexOf("SearchResults.aspx") == -1) {//             
+            if (strloc.indexOf("SearchResults.aspx") == -1) {//
                 window.open("/scripts/SearchResults.aspx?search=" + document.getElementById("txtSearch").value,"_self");
             }
             else window.open("/scripts/SearchResults.aspx?search=" + document.getElementById("txtSearch").value,"_self");
@@ -199,7 +199,7 @@
         strSearch = trim(document.getElementById('txtSearch').value);
         if (strSearch == "") { alert('Please enter the search text'); return false; }
         else {
-           
+
             var strFilterChars = new RegExp("^[0-9a-zA-Z ]*$");
             if (!strFilterChars.test(strSearch)) { alert("Please remove special characters from search text"); return false; }
         }
@@ -214,7 +214,7 @@
 </script>
 
     <style type="text/css">
-    .blink_msm1 
+    .blink_msm1
 {
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 3s;
@@ -231,19 +231,19 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-@-moz-keyframes blinker {  
+@-moz-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@-webkit-keyframes blinker {  
+@-webkit-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@keyframes blinker {  
+@keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
@@ -274,40 +274,40 @@ left: -9999px;
         </div>
         <div id="UsrFontCntr_tblThemes" style="float: right" class="grid_4 prefix_3 top_settings">
             <ul style="margin:0px; padding:0px;">
-               <li class="fonts"> 
+               <li class="fonts">
                 <a id="UsrFontCntr_LinkBtnSpace" role="button" title="Increase Letter Spacing" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnSpace&#39;,&#39;&#39;)"><img src="/images/letspace.png" alt="Increase Letter Spacing" />
-                                <span id="UsrFontCntr_spanBtnSpace" class="sr-only">Not Pressed</span></a>                                
+                                <span id="UsrFontCntr_spanBtnSpace" class="sr-only">Not Pressed</span></a>
             </li>
 
             <li class="fonts">
                 <a id="UsrFontCntr_LinkBtnFontIncrease" role="button" title="Increase Font Size" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnFontIncrease&#39;,&#39;&#39;)"><img src="/images/font-increase.gif" alt="Increase Font Size" />
-                    
+
                 </a>
             </li>
             <li class="fonts">
                 <a id="UsrFontCntr_LinkBtnFontRegular" role="button" title="Regular Font Size" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnFontRegular&#39;,&#39;&#39;)"><img src="/images/font-reset.gif" alt="Regular Font Size" />
-                    
+
                 </a>
             </li>
             <li class="fonts">
                 <a id="UsrFontCntr_LinkBtnFontDecrease" role="button" title="Decrease Font Size" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnFontDecrease&#39;,&#39;&#39;)"><img src="/images/font-decrease.gif" alt="Decrease Font Size" />
-                    
+
                 </a>
             </li></ul>
 		<ul style="margin:0px;padding:0px;">
             <li class="black">
                 <a id="UsrFontCntr_LinkBtnAccessibilty" role="button" title="Apply Dark Theme" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnAccessibilty&#39;,&#39;&#39;)"><img src="/images/dark-theme.gif" alt="Apply Dark Theme" />
-                    
+
                 </a>
             </li>
             <li class="white">
                 <a id="UsrFontCntr_LinkBtnUndoAccessibilty" role="button" title="Apply Normal Theme" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnUndoAccessibilty&#39;,&#39;&#39;)"><img src="/images/bright-theme.gif" alt="Apply Normal Theme" />
-                     
+
                 </a>
             </li>
             <li class="white">
             <a id="UsrFontCntr_LinkBtnGreyScale" role="button" title="Apply Grey Theme" href="javascript:__doPostBack(&#39;UsrFontCntr$LinkBtnGreyScale&#39;,&#39;&#39;)"><img src="/images/graytheme.gif" alt="Apply Grey Theme" />
-                                
+
                                 </a></li>
 
             </ul>
@@ -318,15 +318,15 @@ left: -9999px;
             <div style="float: right">
                 <label style="margin-right: 6px;">
                     Change Language</label>
-			
+
 			<a href="#" onclick="SetLink();" class="link1" title="Change language to Hindi">हिंदी</a>
 			</div>
-                   
+
         </div>
         <div class="clearfix">
         </div>
     </div>
-   
+
 </div>
 <div class="container_12">
     <div class="grid_4" role="banner">
@@ -344,7 +344,7 @@ left: -9999px;
     </div>
 	<div class="grid_2" align="CENTER" role="" style="float: right">
         <div class="logo" >
-           
+
             <img src="../images/BBBP_Logo_4.png" alt="Beti Bachao Beti Padhao Logo" style="width:47%;">
         </div>
     	</div>
@@ -360,11 +360,11 @@ left: -9999px;
  <ul class="submenu1" id="Ab-Sub1" >
 	 <li><a href="/scripts/AboutUsDisplay.aspx">About Us</a></li>
      <li><a href="#" aria-expanded="false" role="button" aria-controls="Ab-org">Organisation & Functions <span aria-hidden="true">▶</span></a>
-		 <ul class="submenu1" id="Ab-org">             
+		 <ul class="submenu1" id="Ab-org">
             <li><a href="/scripts/AboutUsDisplay.aspx?pg=OrganizationStructure.htm">Organisation Structure</a></li>
             <li><a href="/scripts/AboutUsDisplay.aspx?pg=Depts.htm">Departments</a></li>
             <li><a href="Regionaloffices.aspx">Offices</a></li>
-			<li><a href="#" aria-expanded="false" role="button" aria-controls="Ab-tra">Training Establishment <span aria-hidden="true">▶</span></a>                
+			<li><a href="#" aria-expanded="false" role="button" aria-controls="Ab-tra">Training Establishment <span aria-hidden="true">▶</span></a>
 				<ul class="submenu1" id="Ab-tra">
                     <li ><a href="https://cab.rbi.org.in" target="_blank" id="CBOverview">College of Agricultural Banking</a></li>
                     <li ><a href="/scripts/rbsc.aspx" id="CBNotifications">Reserve Bank Staff College</a></li>
@@ -375,11 +375,11 @@ left: -9999px;
             <li><a href="/scripts/AboutUsDisplay.aspx?pg=PastGovernors.htm">Governors</a></li>
 			<li><a href="/scripts/AboutUsDisplay.aspx?pg=deputygovernors.htm">Deputy Governors</a></li>
 			<li><a href="/scripts/AboutUsDisplay.aspx?pg=ExecutiveDirectors.htm">Executive Directors</a></li>
-        </ul>		
+        </ul>
 	 </li>
 <li><a href="AboutUsDisplay.aspx?pg=MediaKit.htm">Media Kit</a></li>
 	 <li><a href="CommunicationPolicy.aspx">Communication Policy of RBI</a></li>
-	
+
      <li>
         <a href="#" aria-expanded="false" role="button" aria-controls="Ab-soi">Sources of Information <span aria-hidden="true">▶</span></a>
         <ul class="submenu1" id="Ab-soi">
@@ -393,9 +393,9 @@ left: -9999px;
             <li><a href="/scripts/BS_NSDPDisplay.aspx">NSDP</a></li>
             <li><a href="/scripts/Statistics.aspx">Data Releases</a></li>
             <li><a href="/scripts/AboutUsDisplay.aspx?pg=AllPublications.htm#PS">Publications available on Subscription</a></li>
-            <li><a href="/scripts/AboutUsDisplay.aspx?pg=AllPublications.htm#GI">General Information</a></li>	  
+            <li><a href="/scripts/AboutUsDisplay.aspx?pg=AllPublications.htm#GI">General Information</a></li>
         </ul>
-     </li>  
+     </li>
 	 <li><a href="/scripts/Project1.aspx">RBI History</a></li>
 	 <li><a href="#" aria-expanded="false" role="button" aria-controls="Ab-mus">Museum <span aria-hidden="true">▶</span></a>
 		<ul class="submenu1" id="Ab-mus">
@@ -410,21 +410,21 @@ left: -9999px;
     <ul class="submenu1" id="No-Sub1">
       <li><a href="/scripts/NotificationUser.aspx">Notifications </a></li>
              <li><a href="/scripts/BS_ViewMasterDirections.aspx">Master Directions </a></li>
-             <li><a href="/scripts/BS_ViewMasterCirculardetails.aspx">Master Circulars </a></li> 
-	     <li><a href="/scripts/Fs_AmendmentDirections.aspx">Amendment Directions </a></li> 
+             <li><a href="/scripts/BS_ViewMasterCirculardetails.aspx">Master Circulars </a></li>
+	     <li><a href="/scripts/Fs_AmendmentDirections.aspx">Amendment Directions </a></li>
 	     <li><a href="#" aria-expanded="false" role="button" aria-controls="No-draft">Draft Notifications/Guidelines <span aria-hidden="true">▶</span></a>
 		<ul class="submenu1" id="No-draft">
 			<li><a href="/scripts/DraftNotificationsGuildelines.aspx">Draft Notifications/Guidelines</a></li>
-			<li><a href="/scripts/BS_ViewREwiseDraftDirections.aspx">Draft Directions (RE-wise)</a></li> 
+			<li><a href="/scripts/BS_ViewREwiseDraftDirections.aspx">Draft Directions (RE-wise)</a></li>
          	</ul>
 	     </li>
 
-            
-             <li><a href="/scripts/BS_CircularIndexDisplay.aspx">Index To RBI Circulars </a></li> 
+
+             <li><a href="/scripts/BS_CircularIndexDisplay.aspx">Index To RBI Circulars </a></li>
              <li><a href="/scripts/BS_ViewListofstandalonecirculars.aspx">Standalone Circulars </a></li>
              <li><a href="/scripts/NotificationUserWithdrawnCircular.aspx">Circulars Withdrawn </a></li>
 
-      
+
     </ul>
   </li>
 
@@ -450,12 +450,12 @@ left: -9999px;
             <li><a href="/scripts/Publications.aspx?publication=Reports">Reports</a></li>
 		    <li><a href="/scripts/OccasionalPublications.aspx?head=Working Papers">Working Papers</a></li>
 		</ul>
-	</li>				  
+	</li>
   <li><a href="#" aria-expanded="false" role="button" aria-controls="Le-Sub1">Legal Framework ▼</a>
 	<ul class="submenu1" id="Le-Sub1">
 	   <li><a href="/scripts/Act.aspx">Act </a></li>
        <li><a href="/scripts/Rules.aspx">Rules </a></li>
-       <li><a href="/scripts/Regulations.aspx">Regulations </a></li> 
+       <li><a href="/scripts/Regulations.aspx">Regulations </a></li>
        <li class="last"><a href="/scripts/Schemes.aspx">Schemes </a></li>
 	   </ul>
   </li>
@@ -476,7 +476,7 @@ left: -9999px;
 		  <li><a href="/scripts/Statistics.aspx">Data Releases</a></li>
           <li><a href="https://data.rbi.org.in" target="_blank">Database on Indian Economy</a></li>
           <li><a href="/scripts/FS_PDS.aspx">Public Debt Statistics</a></li>
-		</ul> 
+		</ul>
   </li>
   <li><a href="#" aria-expanded="false" role="button" aria-controls="St-Sub1">Regulatory Reporting ▼</a>
 		<ul class="submenu1">
@@ -512,28 +512,28 @@ left: -9999px;
             window.location.replace("https://www.rbi.org.in/hindi/");
         }
         else return false;
-        
+
     }
 
 
 
 
 	const allMenuItems = document.querySelectorAll("nav ul li");
-	
+
 	allMenuItems.forEach(item => {
-		item.addEventListener("focusin", (event) => {	
+		item.addEventListener("focusin", (event) => {
 			const MenuText =event.target.textContent;
 			const allMenuItems1 = document.querySelectorAll(".hasSubmenu");
 			allMenuItems1.forEach(item1 => {
 				if (MenuText === 'Press Releases')
-				{	
-					
+				{
+
 					item1.classList.remove('focused');
 					rollback(item1)
 					item1.classList.remove('open');
 				}
 			});
-			
+
 		});
 	});
 
@@ -544,24 +544,24 @@ menuItems.forEach(item => {
 		item.className="hasSubmenu open focused"
 		expandThis(item);
 	});
-	item.addEventListener("mouseleave", (event) => {		
+	item.addEventListener("mouseleave", (event) => {
 		rollback(item)
 		item.className="hasSubmenu"
 	});
-	item.addEventListener("focusin", (event) => {		
+	item.addEventListener("focusin", (event) => {
 		const allMenuItems = document.querySelectorAll("nav ul li");
 		allMenuItems.forEach(item1 => {
 			item1.classList.remove('focused');
 			if(item!==item1)
 			rollback(item1)
-			item1.classList.remove('open');	
-		});							
+			item1.classList.remove('open');
+		});
 		item.classList.add('focused');
 	});
 	item.addEventListener("focusout", (event) => {
-		
+
 		if(!item.className.includes('focused')){
-		
+
 		rollback(item)
 		item.className="hasSubmenu"
 		}
@@ -578,32 +578,32 @@ menuItems.forEach(item => {
 		else{
           	item.className="hasSubmenu open focused"
 		var ele=item.querySelectorAll("a")[0];
-		
-		expandThis(item);	
+
+		expandThis(item);
 		}
-				
+
         }
-	
+
     });
-	
+
 });
 function expandThis(menu){
  var $targetul = $(menu).children("ul:eq(0)")
-				    if ($targetul.queue().length <= 1) 
+				    if ($targetul.queue().length <= 1)
 				        if (this.istopheader)
 					$targetul.css({ left: $(this).children('a').eq(0).position().left, top: $mainmenu.position().top + this._dimensions.h - 2 })
-				            
-				    if (document.all && !window.XMLHttpRequest) 
+
+				    if (document.all && !window.XMLHttpRequest)
 				        $mainmenu.find('ul').css({ overflow: (this.istopheader) ? 'hidden' : 'visible' })
-					
-					
+
+
 				    $targetul.dequeue().stop(true, true).slideDown(droplinemenu.animateduration.over)
 }
 const menuItemsf = document.querySelectorAll("nav .midmenu ul li");
 
 menuItemsf.forEach(item => {
     item.addEventListener("keydown", (event) => {
-	
+
 	if(item.className.includes("last") ){
 		 if (pressedKeys['shift'] && event.key === "Tab"){}else{
 		var lastItem = document.getElementsByClassName('hasSubmenu open');
@@ -611,33 +611,33 @@ menuItemsf.forEach(item => {
 		lastItem[0].className="hasSubmenu";
 		}
 	}
-	
+
 	});
-	
+
 	});
-	
+
 
 function rollback(menu){
  var $targetul = $(menu).children("ul:eq(0)")
 $targetul.dequeue().stop(true, true).slideUp(droplinemenu.animateduration.out);
 }
- 
+
 
 function setLetterSpace(val) {
-    
-	
+
+
     if (false) {
                     document.body.setAttribute("style", "letter-spacing:1px; line-height:20px; word-spacing:2px;");
-       
+
     }
     else {
                     document.body.removeAttribute("style");
     }
     return false;
 
-    
+
     }
-   
+
 
 // Toggle submenu
     document.querySelectorAll('.menu li > a').forEach(link => {
@@ -651,15 +651,15 @@ function setLetterSpace(val) {
                 const parentLi = this.parentElement;
 
                 // Close sibling menus ONLY (not entire menu)
-                closeSiblings(parentLi);   
- 
+                closeSiblings(parentLi);
 
-               
- 
+
+
+
                 const isExpanded=link.getAttribute('aria-expanded') ==='true';
                 link.setAttribute('aria-expanded',!isExpanded);
                 submenu.hidden=isExpanded;
-                
+
                 submenu.setAttribute('aria-hidden', isExpanded);
                 setTimeout(()=>{
                     // Toggle current submenu
@@ -684,18 +684,18 @@ function setLetterSpace(val) {
 
     //  Click outside → close all
     document.addEventListener('click', function () {
-		
+
         document.querySelectorAll('.menu li > a').forEach(menu => {
 		if(menu.hasAttribute('aria-expanded')){
             menu.setAttribute('aria-expanded','false');
 	}
-	
+
     });
 
     document.querySelectorAll('.submenu1').forEach(menu => {
         menu.setAttribute('aria-hidden','true');
     menu.classList.remove('show');
-	
+
 
     });
     });
@@ -728,7 +728,7 @@ function setLetterSpace(val) {
             },50);
 
 
-           
+
         }
 
           if (e.key === 'Escape') {
@@ -744,24 +744,24 @@ function setLetterSpace(val) {
         item.addEventListener('focus', function() {
 
             document.querySelectorAll('.submenu1').forEach(menu => {
-                
+
                 if (menu !== this.nextElementSibling) {
-              
+
 
             document.querySelectorAll('.menu li > a').forEach(menu => {
                 if(menu.hasAttribute('aria-expanded'))
                 menu.setAttribute('aria-expanded','false');
-		
+
             document.querySelectorAll('.submenu1').forEach(menu => {
                 menu.setAttribute('aria-hidden','true');
-            
+
             menu.classList.remove('show');
-            
+
 
 
         });
 
-	
+
     });
 
     }
@@ -780,7 +780,7 @@ function setLetterSpace(val) {
                     submenu.classList.remove('show');
                     if(li.querySelector('a').hasAttribute('aria-expanded'))
                         li.querySelector('a').setAttribute('aria-expanded','false');
-	
+
 
                     submenu.setAttribute('aria-hidden','true');
                 }
@@ -811,12 +811,12 @@ function setLetterSpace(val) {
 
                         <div>
                             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                
+
                                 <table class="tablebg" width="100%"><tr><td class="tableheader" align="left"><b>Jun 30, 2026</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=63050>RBI releases the Financial Stability Report, June 2026</a></td></tr><tr><td class="tableheader" align="left"><b>Dec 31, 2025</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=61922>RBI releases the Financial Stability Report, December 2025</a></td></tr><tr><td class="tableheader" align="left"><b>Jun 30, 2025</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=60739>RBI releases the Financial Stability Report, June 2025</a></td></tr><tr><td class="tableheader" align="left"><b>Dec 30, 2024</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=59409>RBI releases the Financial Stability Report, December 2024</a></td></tr><tr><td class="tableheader" align="left"><b>Jun 27, 2024</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=58169>RBI releases the Financial Stability Report, June 2024</a></td></tr><tr><td class="tableheader" align="left"><b>Dec 28, 2023</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=57005>RBI releases the Financial Stability Report, December 2023</a></td></tr><tr><td class="tableheader" align="left"><b>Jun 28, 2023</b></td></tr><tr><td><a class='link2' href=BS_PressReleaseDisplay.aspx?prid=55943>RBI releases the Financial Stability Report, June 2023</a></td></tr></table>
                             </table>
                             <br />
                             <div align="right">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -842,7 +842,7 @@ function setLetterSpace(val) {
 }
 
 .accordionContent ul.accordionlist li {
-    
+
     min-height: 24px;
 }
 </style>
@@ -865,11 +865,11 @@ function setLetterSpace(val) {
 <footer class="footer">
 
 <div class="footer">
-  <div class="container_12">    
+  <div class="container_12">
       <div class="grid_9" style="width: 833px !important; ">
-          
+
           <h2><span class="blue">More</span> Links :</h2>
-          
+
 		<ul class="footerlist" style="column-count:4">
                   <li ><a href="/Scripts/HolidayMatrixDisplay.aspx">Bank Holidays</a></li>
                   <li ><a href="https://shabdavali.rbi.org.in/">Banking Glossary</a></li>
@@ -890,26 +890,26 @@ function setLetterSpace(val) {
                   <li><a href="https://rbidocs.rbi.org.in/rdocs/content/pdfs/Utkarsh202910042026.pdf" target="_blank">RBI’s Vision and Values <img src="../Images/pdf.gif" alt="PDF document" style="padding-bottom: 4px; width:12px; border:0; vertical-align:middle;"> (652 KB)</a></li>
                   <li><a href="/Scripts/Righttoinfoact.aspx">Right to Information Act</a></li>
                   <li><a href="/Scripts/BS_ViewTenders.aspx">Tenders</a></li>
-                  
+
               </ul>
       </div>
 
     <div class="grid_3" style="width:197px !important">
-      
+
         <h2><span class="blue">Follow</span> RBI</h2>
       <ul class="footerlist">
-        
+
 
           <li style="float: left;background: url(/images/footer_list_arrow.gif) left 8px no-repeat;"><a href="/Scripts/rss.aspx"><img src="/images/rss-icon.png" alt="RSS Icon" class="rss">RSS</a></li>
 
-        
+
           <li>
               <a href="https://twitter.com/RBI" target="_blank" class="twitter">
                   <img src="/images/Twitter_New.png" alt="Twitter Icon" class="videos" style="padding-left: 18%; width:14px;">Twitter
               </a>
           </li>
 
-        
+
 
           <li style="float: left;"><a href="https://www.youtube.com/channel/UCIfCOl43tunZVNYafeC4RQA" class="videos" target="_blank"><img src="/images/youtube.png" alt="YouTube Icon" class="videos">YouTube</a></li>
 
@@ -946,11 +946,11 @@ function setLetterSpace(val) {
 	</a><span aria-hidden="true"> |</span><a href="/scripts/ScreenReader.aspx" title="Information related to screen reader">Screen Reader and Accessibility Help</a></div>
 	<div class="clearfix"></div>
         <div class="grid_12 pull_left">Supports: Google Chrome 147+ | Firefox 150+ | Microsoft Edge Version 147+ | Safari 17+</div>
-        
+
         <div class="clearfix"></div>
     </div>
   </div>
-  
+
 
 
 
@@ -963,7 +963,7 @@ function setLetterSpace(val) {
 
 
     //this is for floating TOP link
-    
+
     $(document).ready(function () {
 
         var offset = 230;
@@ -973,25 +973,25 @@ function setLetterSpace(val) {
         jQuery(window).scroll(function () {
             if (jQuery(this).scrollTop() > offset) {
                 jQuery('.scrollToTop').fadeIn(duration);
-                
+
             } else {
                 jQuery('.scrollToTop').fadeOut(duration);
-                
+
             }
         });
 
-        
+
 	$('.page_title').attr('tabindex','-1');
         $('.scrollToTop').click(function () {
             $('html, body').animate({ scrollTop: 0 }, 800);
-		$('.page_title').focus(); 
+		$('.page_title').focus();
             return false;
         });
-	
+
 
 
 	if(!window.location.href.includes("Home.aspx") && !window.location.href.includes("home.aspx"))
-{ 
+{
 if( window.location.href.includes(".aspx")){
 var div= document.getElementById('backDiv');
 	div.removeAttribute("hidden");}
@@ -1007,7 +1007,7 @@ else{
     });
 
 
-  
+
     $(window).scroll(function () {
 
         if ($('div.banner2').length) {
@@ -1023,7 +1023,7 @@ else{
                 $('.sidebar_nav').css("width", "236px");
 
 
-             
+
 
             }
 
@@ -1039,7 +1039,7 @@ else{
 
 
 
-         
+
             }
 
         }
@@ -1055,18 +1055,18 @@ else{
             $('.sidebar_nav').css("width", "236px");
 
 
-          
+
 		var treeheight=0;
 		if($('#treeYear').height()>0){treeheight=$('#treeYear').height();}
 	    	if($(window).scrollTop() >= $('#example-min').height()-treeheight)
-		{			 
+		{
 			$('#menubar').css("position", "absolute");
-            		
+
 			$('#menubar').css("margin-top", "");
 			$('#menubar').css("top", $('#example-min').height()+100-treeheight +"px");
 		}
 		else{$('#menubar').css("position", "fixed"); $('#menubar').css("top", "");}
-		
+
         }
 
         else {
@@ -1080,17 +1080,17 @@ else{
             $('.sidebar_nav').css("width", "");
 
 
-       
-        }
-     
 
-       
+        }
+
+
+
     });
-	
-      
+
+
     $(document).ready(function () {
-	
-	
+
+
 		  $('.window .close').click(function (e) {
             //Cancel the link behavior
             e.preventDefault();
@@ -1100,7 +1100,7 @@ else{
             var scroll = $(window).scrollTop();
             $("html").scrollTop(scroll);
         });
-		
+
 		 $('#maskWN').click(function () {
             $(this).hide();
             $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
@@ -1108,7 +1108,7 @@ else{
 
         });
 
-        
+
 
         //if close button is clicked
         $('.window .close').click(function (e) {
@@ -1134,7 +1134,7 @@ else{
             var maskWidth = $(window).width();
 
             //Set heigth and width to mask to fill up the whole screen
-            
+
             $('#mask').css({ 'width': '100%', 'height': '100%', 'position': 'fixed' });
 
             //transition effect
@@ -1222,7 +1222,7 @@ else{
             return expr.test(email);
         };
 
-       
+
 
         $('a.style1').each(function () {
 
@@ -1231,31 +1231,31 @@ else{
             $this.attr('class', aHref.replace('style1', 'links'));
         });
 
-		
+
    });
 
   function isExternal(url) {
 	if(url){url=url.toLowerCase();
        if(url=='#' || url=='javascript:void(0);' || url.includes('javascript')||url=='' )
-	{ return false;} 
+	{ return false;}
 	else{//return (url.indexOf("rbi.org.in")==-1)
-	
+
 	if(url.indexOf("www.rbi.org.in")==-1 || url.indexOf("https://rbi.org.in")==-1)
-		{	
-			if(url.indexOf("rbi.org.in")==-1)		
+		{
+			if(url.indexOf("rbi.org.in")==-1)
     				return "external";
 			else if(url.indexOf("www.rbi.org.in")==-1 && url.indexOf(".rbi.org.in")>0 && url.indexOf("rbidocs.rbi.org.in")==-1)
 				{return "subdomain";}
 			else if(url.indexOf("financialeducation")>0 || url.indexOf("commonperson")>0 || url.indexOf("/rekyc/")>0 || url.indexOf("rbi90years")>0 ){
 				return "subsite";}
-			
+
 		}
-	
+
 	}}
     }
     document.addEventListener("click", function () {
 	linkMessage();
-        
+
     });
 function linkMessage(){
 	if (event.target.tagName.toLowerCase() === "a") {
@@ -1266,7 +1266,7 @@ function linkMessage(){
                     return;
                 }
                 else {
-                   
+
                     event.preventDefault();
                     return;
                 }
@@ -1276,7 +1276,7 @@ function linkMessage(){
                     return;
                 }
                 else {
-                   
+
                     event.preventDefault();
                     return;
                 }
@@ -1286,21 +1286,21 @@ function linkMessage(){
                     return;
                 }
                 else {
-                   
+
                     event.preventDefault();
                     return;
                 }
 	    }
         }
 	else if (event.target.tagName.toLowerCase() === "img") {
-		$(event.target).preventDefault;		
+		$(event.target).preventDefault;
 		if($(event.target).parent('a').length){
 			 if (isExternal($(event.target).parent('a').prop('href'))==="external") {
                 		if (confirm("You are being redirected to an external website that opens in a new tab. Please note that Reserve Bank of India will not be held responsible for external websites content in any manner.")) {
                     		return;
                		 }
 
-                	else {                   
+                	else {
                     		event.preventDefault();
                     		return;
                 	}}
@@ -1309,7 +1309,7 @@ function linkMessage(){
                     		return;
                		 	}
 
-                		else {                   
+                		else {
                     		event.preventDefault();
                     		return;
                 		}
@@ -1319,50 +1319,50 @@ function linkMessage(){
                     	return;
                 	}
                 	else {
-                   
+
                     		event.preventDefault();
                     	return;
                 	}
 	    		}
 	}}
 	const link = event.target.closest('a[target="_blank"]');
-	if(link){ 
+	if(link){
 		event.preventDefault();
 		const docRegx = /\.(pdf|docx?|xlsx?|zip?|xls|doc)$/i;
 		if(docRegx.test(link)){
 			if(/\.pdf$/i.test(link))
-			{	
+			{
 				if(confirm("This PDF will open in a new browser tab. Do you want to continue?")){
 				window.open(link.href,"_blank");}
 			}
 			else if(/\.docx$/i.test(link))
-			{	
+			{
 				if(confirm("Are you sure you want to download this document?")){
 				window.open(link.href,"_blank");}
 			}
 			else if(/\.doc$/i.test(link))
-			{	
+			{
 				if(confirm("Are you sure you want to download this document?")){
 				window.open(link.href,"_blank");}
 			}
 			else if(/\.xlsx$/i.test(link))
-			{	
+			{
 				if(confirm("Are you sure you want to download this document?")){
 				window.open(link.href,"_blank");}
 			}
 			else if(/\.xls$/i.test(link))
-			{	
+			{
 				if(confirm("Are you sure you want to download this document?")){
 				window.open(link.href,"_blank");}
 			}
 			else if(/\.zip$/i.test(link))
-			{	
+			{
 				if(confirm("Are you sure you want to download this file?")){
 				window.open(link.href,"_blank");}
 			}
 		}
 
-		else 
+		else
 		if(confirm("This link will open in a new browser tab. Do you want to continue?")){
 			window.open(link.href,"_blank");
 		}
@@ -1396,7 +1396,7 @@ document.querySelectorAll('table.tablebg').forEach(table => {
     const hasInPageAnchorsInThisTableOnly = Array.from(anchors).some(a => {
         // Find the closest table ancestor of this anchor
         const closestTable = a.closest('table');
-    
+
         // Only count it if it belongs to the current table (not a nested one)
         return closestTable === table;
     });
@@ -1404,10 +1404,10 @@ document.querySelectorAll('table.tablebg').forEach(table => {
     if (!hasInPageAnchorsInThisTableOnly) {
        // table.setAttribute('role', 'presentation');
        //} else {
-       //    table.removeAttribute('role'); 
+       //    table.removeAttribute('role');
 	if(table.closest('td')){
 	if(table.querySelector('th'))
-	{	
+	{
 		table.removeAttribute('role');
 	}
 	else{
@@ -1434,43 +1434,43 @@ $('.tableheader b').each(function () {
         });
  });
 
-//  tooltip 
+//  tooltip
 var TooltipManager = {
-    _tip: null, // Create the tooltip element once 
+    _tip: null, // Create the tooltip element once
 init: function() {
     if (!this._tip) {
-    
+
         this._tip = $('<div id="js-custom-tooltip"></div>').css({
             "position": "absolute", "background": '#ffffca', "color":"#000", "padding": "2px 5px", "border-radius": "0px", "font-size": "11px","font-family":"Sans-serif", "z-index": "10000", "pointer-events": "none","border":"1px solid #767676", "box-shadow":"2px 2px 3px rgba(0,0,0,0.2)","white-space":"nowrap"
         }).appendTo('body');
-        
+
     }
-}, 
+},
 show: function(element, text) {
-    this.init(); 
-var $el = $(element); // Update text and position 
-    
+    this.init();
+var $el = $(element); // Update text and position
+
 this._tip.text(text).show();
-var pos = $el.offset(); 
+var pos = $el.offset();
 this._tip.css({
-    top: pos.top + this._tip.outerHeight()  + "px", // Show above 
+    top: pos.top + this._tip.outerHeight()  + "px", // Show above
     left: pos.left + ($el.outerWidth() / 2) - (this._tip.outerWidth() / 2) + "px"
 });
     }, hide: function() { if (this._tip) this._tip.hide(); }
-}; // Apply to all elements that have a ToolTip (ToolTip renders as 'title') 
+}; // Apply to all elements that have a ToolTip (ToolTip renders as 'title')
 $(document).ready(function() {
-   
+
     $('body').on('focusin', 'input, button, a, select, textarea, img', function() {
         var title = $(this).attr('title'); if (title) {
-    
-            
-      
+
+
+
             TooltipManager.show(this, title);
         }
-    }).on('focusout', 'input, button, a, select, textarea, img', function() { 
-       
+    }).on('focusout', 'input, button, a, select, textarea, img', function() {
+
             TooltipManager.hide();
-       
+
     }); // Dismiss on Escape key
     $(document).keyup(function(e) { if (e.key === "Escape") TooltipManager.hide(); });
 });
@@ -1482,12 +1482,12 @@ const breadcrumbList = document.querySelector('.breadcrumbs');
 
     if (breadcrumbList) {
         const listItems = breadcrumbList.querySelectorAll('li');
-    
+
         if (listItems.length > 0) {
-            
+
             const lastItem = $('.breadcrumbs li').filter(function(){ return $.trim($(this).text())!=="";}).last().attr('aria-current', 'page').css('background','none'); //remove extra icons from empty breadcrumbs
             $('.breadcrumbs li').filter(function(){ return $.trim($(this).text())==="" && $(this).children().length===0;}).attr('role','presentation');
-	    
+
        		$('.breadcrumbs li').filter(function(){
 			if($(this).children().length!==0)
 			{
@@ -1496,27 +1496,27 @@ const breadcrumbList = document.querySelector('.breadcrumbs');
 		});
             const lastLink =lastItem.find('a');
             if (lastLink) {
-                lastLink.attr('aria-current', 'page');               
-                
+                lastLink.attr('aria-current', 'page');
+
             }
 		if($('.breadcrumbs li').last().find('a').length>0)
-		{			
+		{
 			const $a = $('.breadcrumbs li').last().find('a');
 			$('<span>',{class: $a.attr('class'), text: $a.text()}).replaceAll($a).attr('aria-current', 'page').css('background','none');
 		}
-		
+
 		if($('.breadcrumbs li').last().find('span').length>0)
 		{
-			
+
 			if($('.breadcrumbs li').last().find('span')[0].innerText==='')
 			{
-				$('.breadcrumbs li').last().find('span').removeAttr('aria-current');				
+				$('.breadcrumbs li').last().find('span').removeAttr('aria-current');
 			}
 			else{
-				$('.breadcrumbs li').last().find('span').filter(function(){ return $(this).attr('role')!=='presentation';}).last().attr('aria-current', 'page').css('background','none');					
-			}		
+				$('.breadcrumbs li').last().find('span').filter(function(){ return $(this).attr('role')!=='presentation';}).last().attr('aria-current', 'page').css('background','none');
+			}
 		}
-		$('.breadcrumbs li').filter(function(){ return $.trim($(this).text())!=="";}).removeAttr('role','presentation'); 
+		$('.breadcrumbs li').filter(function(){ return $.trim($(this).text())!=="";}).removeAttr('role','presentation');
 		$('.breadcrumbs li').filter(function(){ return $.trim($(this).text())==="" }).css('background','none');//remove extra icons from empty breadcrumbs
         }
     }

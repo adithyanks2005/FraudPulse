@@ -1,3 +1,8 @@
-fastapi[standard]>=0.115
-uvicorn>=0.30
+fastapi>=0.115
+uvicorn[standard]>=0.30
 pydantic-settings>=2.4
+httpx==0.28.1
+requests>=2.32
+beautifulsoup4>=4.15
+pypdf>=6.21
+psycopg[binary]>=3.2

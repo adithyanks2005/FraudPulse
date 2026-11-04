@@ -4,6 +4,7 @@ The URL list contains one URL per line; blank lines and lines beginning with
 '#' are ignored. PDF files are written atomically to data/raw/, and successful
 downloads are recorded in data/manifest.csv.
 """
+
 import csv
 import hashlib
 import os
@@ -20,12 +21,7 @@ from urllib.robotparser import RobotFileParser
 
 RAW = "data/raw"
 MANIFEST = "data/manifest.csv"
-HEADERS = {
-    "User-Agent": (
-        "ADITHYANKS/1.0 (Bastion Brief; contact:"
-        "ksadithyan2021@gmail.com)"
-    )
-}
+HEADERS = {"User-Agent": ("ADITHYANKS/1.0 (Bastion Brief; contact:ksadithyan2021@gmail.com)")}
 DELAY = 2
 TIMEOUT = 30
 MAX_ATTEMPTS = 3
@@ -85,11 +81,7 @@ def _logged_urls():
         return set()
 
     with open(MANIFEST, newline="", encoding="utf-8") as mf:
-        return {
-            row["source_url"]
-            for row in csv.DictReader(mf)
-            if row.get("source_url")
-        }
+        return {row["source_url"] for row in csv.DictReader(mf) if row.get("source_url")}
 
 
 def _fetch_pdf(url):
@@ -151,9 +143,7 @@ def main(list_file):
     with open(MANIFEST, "a", newline="", encoding="utf-8") as mf:
         log = csv.writer(mf)
         if new_manifest:
-            log.writerow(
-                ["file", "source_url", "downloaded_on", "bytes", "sha256"]
-            )
+            log.writerow(["file", "source_url", "downloaded_on", "bytes", "sha256"])
 
         with open(list_file, encoding="utf-8") as fh:
             urls = [url.strip() for url in fh]
@@ -185,9 +175,7 @@ def main(list_file):
 
             _save_atomically(path, content)
             digest = hashlib.sha256(content).hexdigest()
-            log.writerow(
-                [str(path), url, date.today().isoformat(), len(content), digest]
-            )
+            log.writerow([str(path), url, date.today().isoformat(), len(content), digest])
             mf.flush()
             logged_urls.add(url)
             print("saved", path, len(content), "bytes")

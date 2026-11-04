@@ -1,9 +1,9 @@
 # 🛡️ FraudPulse
 
-> **AI-powered RBI financial fraud and cyber-risk intelligence.**  
+> **AI-powered RBI financial fraud and cyber-risk intelligence.**
 > Find, compare, and verify what the Reserve Bank of India (RBI) reports about banking fraud, cyber incidents, and digital-payment risks.
 
-**Project status:** In development  
+**Project status:** In development
 **Primary user:** IT-risk officer at an urban co-operative bank preparing quarterly cyber-risk notes for the board.
 
 ---
